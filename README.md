@@ -1,2 +1,1 @@
-# google_gooks_api
-Google Books API
+# Google Books API
