@@ -59,12 +59,13 @@ def get_book_details_seq(isbn, session):
 # MAIN
 #=======================================================================================================
 
-with requests.Session() as session:
-    for isbn in LIST_ISBN:
-        try:
-            response = get_book_details_seq(isbn, session)
-            parsed_response = extract_fields_from_response(response)
-            print(f"Response: {json.dumps(parsed_response, indent=2)}")
-        except Exception as err:
-            print(f"Exception occured: {err}")
-            pass
+if __name__ == "__main__":
+    with requests.Session() as session:
+        for isbn in LIST_ISBN:
+            try:
+                response = get_book_details_seq(isbn, session)
+                parsed_response = extract_fields_from_response(response)
+                print(f"Response: {json.dumps(parsed_response, indent=2)}")
+            except Exception as err:
+                print(f"Exception occured: {err}")
+                pass
